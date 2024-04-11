@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dropdown Box</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div id="content">
+    <label for="moon"></label>
+    <select id="moon" name="resolution">
+      <option value="blank"></option>
+      <option value="144p">144p</option>
+      <option value="240p">240p</option>
+      <option value="480p">480p</option>
+      <option value="720p">720p</option>
+      <option value="1080p">1080p</option>
+    </select>
+
+    <br><br>
+
+    <img id="imagePlaceholder" src="" alt="Image Placeholder">
+    <div id="message">✨ YOU ✨</div>
+    <div id="confetti"></div> <!-- Confetti container -->
+    <audio id="audioPlayer">
+      <!-- The source of the audio will be set dynamically -->
+      Your browser does not support the audio element.
+    </audio>
+
+    <script>
+      const resolutionSelect = document.getElementById('moon');
+      const imagePlaceholder = document.getElementById('imagePlaceholder');
+      const message = document.getElementById('message');
+      const audioPlayer = document.getElementById('audioPlayer');
+      const confetti = document.getElementById('confetti'); // Confetti container
+
+      resolutionSelect.addEventListener('change', function() {
+        const selectedResolution = resolutionSelect.value;
+        if (selectedResolution === 'blank') {
+          // If "blank" option is selected, hide the image placeholder and confetti
+          imagePlaceholder.style.display = 'none';
+          message.style.display = 'none';
+          confetti.style.display = 'none';
+          document.body.style.backgroundColor = '#0F2027'; // Reset background color
+          // Pause the audio if it's playing
+          audioPlayer.pause();
+        } else {
+          // For other options, show the image placeholder
+          imagePlaceholder.style.display = 'block';
+          confetti.style.display = 'none'; // Hide confetti initially
+          if (selectedResolution === '144p') {
+            imagePlaceholder.src = "C:/html/moon/PngItem_53597.png";
+            message.style.display = 'none';
+            // Pause the audio if it's playing
+            audioPlayer.pause();
+          } else if (selectedResolution === '240p') {
+            imagePlaceholder.src = "C:/html/moon/pixel-art-illustration-moon-pixelated-moon-shiny-moon-pixelated-pixel-art-game_1038602-173.avif";
+            message.style.display = 'none';
+            // Pause the audio if it's playing
+            audioPlayer.pause();
+          } else if (selectedResolution === '480p') {
+            imagePlaceholder.src = "C:/html/moon/0_Y3Ni5YsEfX_peGDJ.jpg";
+            message.style.display = 'none';
+            // Pause the audio if it's playing
+            audioPlayer.pause();
+          } else if (selectedResolution === '720p') {
+            imagePlaceholder.src = "C:/html/moon/FullMoon2010.jpg.webp";
+            message.style.display = 'none';
+            // Pause the audio if it's playing
+            audioPlayer.pause();
+          } else if (selectedResolution === '1080p') {
+            imagePlaceholder.src = "C:/html/moon/ETlDdQ8WAAcPzbl.jpeg";
+            message.style.display = 'block';
+            // Set the source of the audio player to the desired music file
+            audioPlayer.src = "C:/html/moon/Voicy_NEVER GONNA MEOW U UP(new).mp3";
+            // Play the audio
+            audioPlayer.play();
+            // Show confetti
+            confetti.style.display = 'block';
+            // Add sparkling effect to background color
+            document.body.style.backgroundColor = 'rgba(255, 255, 255, 0.3)'; // Change background color to semi-transparent white
+            // Revert background color after a short delay
+            setTimeout(() => {
+              document.body.style.backgroundColor = '#0F2027'; // Reset background color
+            }, 2000); // Change the duration as needed (2000ms = 2 seconds)
+          }
+        }
+      });
+    </script>
+  
+  </body>
+</html>
