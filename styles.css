@@ -2,7 +2,7 @@ body, html {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: hotpink; /* Replace 'cute-background-pattern.png' with the actual path to your cute background image */
+    background-color: #4c4c4c; /* Replace 'cute-background-pattern.png' with the actual path to your cute background image */
     background-size: cover; /* Ensure the background covers the entire viewport */
     background-repeat: no-repeat; /* Prevent background from repeating */
     background-position: center; /* Center the background image */
@@ -48,7 +48,7 @@ body, html {
     border: none; /* Remove border */
     border-radius: 20px; /* Rounded corners */
     outline: none;
-    background-color: #4c4c4c; /* Soft gradient background */
+    background-color: hotpink; /* Soft gradient background */
     color: #FFF;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
