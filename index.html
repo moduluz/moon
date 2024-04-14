@@ -23,9 +23,8 @@
 
     <img id="imagePlaceholder" src="" alt="Image Placeholder">
     <div id="message">✨ YOU ✨</div>
-    <div id="confetti"></div> <!-- Confetti container -->
+    <div id="confetti"></div>
     <audio id="audioPlayer">
-      <!-- The source of the audio will be set dynamically -->
       Your browser does not support the audio element.
     </audio>
 
@@ -34,57 +33,45 @@
       const imagePlaceholder = document.getElementById('imagePlaceholder');
       const message = document.getElementById('message');
       const audioPlayer = document.getElementById('audioPlayer');
-      const confetti = document.getElementById('confetti'); // Confetti container
+      const confetti = document.getElementById('confetti');
 
       resolutionSelect.addEventListener('change', function() {
         const selectedResolution = resolutionSelect.value;
         if (selectedResolution === 'blank') {
-          // If "blank" option is selected, hide the image placeholder and confetti
           imagePlaceholder.style.display = 'none';
           message.style.display = 'none';
           confetti.style.display = 'none';
-          document.body.style.backgroundColor = '#0F2027'; // Reset background color
-          // Pause the audio if it's playing
+          document.body.style.backgroundColor = '#0F2027';
           audioPlayer.pause();
         } else {
-          // For other options, show the image placeholder
           imagePlaceholder.style.display = 'block';
-          confetti.style.display = 'none'; // Hide confetti initially
+          confetti.style.display = 'none';
           if (selectedResolution === '144p') {
             imagePlaceholder.src = "PngItem_53597.png";
             message.style.display = 'none';
-            // Pause the audio if it's playing
             audioPlayer.pause();
           } else if (selectedResolution === '240p') {
             imagePlaceholder.src = "pixel-art-illustration-moon-pixelated-moon-shiny-moon-pixelated-pixel-art-game_1038602-173.avif";
             message.style.display = 'none';
-            // Pause the audio if it's playing
             audioPlayer.pause();
           } else if (selectedResolution === '480p') {
             imagePlaceholder.src = "0_Y3Ni5YsEfX_peGDJ.jpg";
             message.style.display = 'none';
-            // Pause the audio if it's playing
             audioPlayer.pause();
           } else if (selectedResolution === '720p') {
             imagePlaceholder.src = "FullMoon2010.jpg.webp";
             message.style.display = 'none';
-            // Pause the audio if it's playing
             audioPlayer.pause();
           } else if (selectedResolution === '1080p') {
             imagePlaceholder.src = "ETlDdQ8WAAcPzbl.jpeg";
             message.style.display = 'block';
-            // Set the source of the audio player to the desired music file
             audioPlayer.src = "Voicy_NEVER GONNA MEOW U UP(new).mp3";
-            // Play the audio
             audioPlayer.play();
-            // Show confetti
             confetti.style.display = 'block';
-            // Add sparkling effect to background color
-            document.body.style.backgroundColor = 'rgba(255, 255, 255, 0.3)'; // Change background color to semi-transparent white
-            // Revert background color after a short delay
+            document.body.style.backgroundColor = 'rgba(255, 255, 255, 0.3)';
             setTimeout(() => {
-              document.body.style.backgroundColor = '#0F2027'; // Reset background color
-            }, 2000); // Change the duration as needed (2000ms = 2 seconds)
+              document.body.style.backgroundColor = '#0F2027';
+            }, 2000);
           }
         }
       });
@@ -92,3 +79,4 @@
   
   </body>
 </html>
+
